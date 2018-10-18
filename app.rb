@@ -20,11 +20,11 @@ get '/play' do
   erb :play
 end
 
-get '/play' do
-  @player_1 = $p1.name
-  @player_2 = $p2.name
-  redirect '/attack'
-end
+# get '/play' do
+#   @player_1 = $p1.name
+#   @player_2 = $p2.name
+#   redirect '/attack'
+# end
 
 get '/attack' do
   @player_1 = $p1.name
