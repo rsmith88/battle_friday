@@ -1,6 +1,11 @@
 <div>
-<%= @game.player1.name %> attacked <%= @game.player2.name %>
+<%= @game.opponent.name %> attacked <%= @game.current_turn.name %>
 </div>
 <div>
-<%= @game.player2.name %>'s hit points is now <%= @game.player2.health %>
+<%= @game.current_turn.name %>'s hit points is now <%= @game.current_turn.health %>
+</div>
+<div>
+<form action="/play" method="get">
+    <input type="submit" value="Switch Turns">
+  </form>
 </div>

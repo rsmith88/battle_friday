@@ -26,7 +26,7 @@ end
 
 get '/attack' do
   @game = $game
-  $game.player2.receive_attack
+  $game.attack($game.opponent)
   erb :attack
 end
 
