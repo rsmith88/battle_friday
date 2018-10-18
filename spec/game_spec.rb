@@ -3,12 +3,21 @@ require 'player'
 
 describe Game do
 
-  describe 'player.attack(player2)' do
-    it "depletes player2's health by 10 points" do
+  describe 'game initialize' do
+    it 'initializes with 2 players' do
+      game = Game.new("Mike", "Bob")
+      expect(game.player1).to eq "Mike"
+      expect(game.player2).to eq "Bob"
+    end
+  end
+
+  describe 'attack(player)' do
+    it "allows the player to recieve attack" do
       player1 = Player.new("Mike")
       player2 = Player.new("Bob")
-      expect(player2).to receive(:receive_attack)
-      subject.attack(player2)
+      game = Game.new(player1, player2)
+      expect(game.player2).to receive(:receive_attack)
+      game.attack(game.player2)
     end
   end
 
