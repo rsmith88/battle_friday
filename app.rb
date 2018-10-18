@@ -17,17 +17,16 @@ post '/names' do
 end
 
 get '/play' do
-  @player_1 = $game.player1.name
-  @player_2 = $game.player2.name
-  @player_2_health = $game.player2.health
+  #@player_1 = $game.player1.name
+  #@player_2 = $game.player2.name
+  #@player_2_health = $game.player2.health
+  @game = $game
   erb :play
 end
 
 get '/attack' do
-  @player_1 = $game.player1.name
-  @player_2 = $game.player2.name
+  @game = $game
   $game.player2.receive_attack
-  @player_2_health = $game.player2.health
   erb :attack
 end
 
