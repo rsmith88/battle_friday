@@ -13,4 +13,8 @@ class Player
     @name
   end
 
+  def attack(player)
+    player.health -= 10
+  end
+
 end

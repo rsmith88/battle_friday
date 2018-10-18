@@ -17,13 +17,14 @@ end
 get '/play' do
   @player_1 = $p1.name
   @player_2 = $p2.name
+  @player_2_health = $p2.health
   erb :play
 end
 
 get '/attack' do
   @player_1 = $p1.name
   @player_2 = $p2.name
-  $p2.health -= 10
+  $p1.attack($p2)
   @player_2_health = $p2.health
   erb :attack
 end
