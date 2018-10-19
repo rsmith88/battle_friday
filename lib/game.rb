@@ -1,5 +1,14 @@
 class Game
 
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
+    #self.create & self.instance are both class methods, and thus can both access class variable @game.
+  end
+
   attr_reader :player1, :player2, :current_turn, :opponent
 
   def initialize(player1, player2)
